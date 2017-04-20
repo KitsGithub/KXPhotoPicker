@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04B5E6531EA8427800F558CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6521EA8427800F558CB /* main.m */; };
+		04B5E6561EA8427800F558CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6551EA8427800F558CB /* AppDelegate.m */; };
+		04B5E6591EA8427800F558CB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6581EA8427800F558CB /* ViewController.m */; };
+		04B5E65C1EA8427800F558CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B5E65A1EA8427800F558CB /* Main.storyboard */; };
+		04B5E65E1EA8427800F558CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B5E65D1EA8427800F558CB /* Assets.xcassets */; };
+		04B5E6611EA8427800F558CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B5E65F1EA8427800F558CB /* LaunchScreen.storyboard */; };
+		04B5E66B1EA8439C00F558CB /* KXPhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E66A1EA8439C00F558CB /* KXPhotoPickerViewController.m */; };
+		04B5E66E1EA8440600F558CB /* KXAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E66D1EA8440600F558CB /* KXAlbumTableViewController.m */; };
+		04B5E6711EA8442200F558CB /* KXImageFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6701EA8442200F558CB /* KXImageFlowViewController.m */; };
+		04B5E6731EA84DE700F558CB /* ImageResource.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B5E6721EA84DE700F558CB /* ImageResource.xcassets */; };
+		04B5E6771EA8507000F558CB /* UIColor+My.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6761EA8507000F558CB /* UIColor+My.m */; };
+		04B5E67B1EA8514800F558CB /* KXAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E67A1EA8514800F558CB /* KXAlbumCell.m */; };
+		04B5E67F1EA8546B00F558CB /* KXAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E67E1EA8546B00F558CB /* KXAlbumModel.m */; };
+		04B5E6841EA868AE00F558CB /* DNAssetsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6831EA868AE00F558CB /* DNAssetsViewCell.m */; };
+		04B5E6881EA8866F00F558CB /* DNSendButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6871EA8866F00F558CB /* DNSendButton.m */; };
+		04B5E68E1EA8873B00F558CB /* UIView+KXImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E68D1EA8873B00F558CB /* UIView+KXImagePicker.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04B5E64E1EA8427800F558CB /* KXPhotoBrower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KXPhotoBrower.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B5E6521EA8427800F558CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04B5E6541EA8427800F558CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04B5E6551EA8427800F558CB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04B5E6571EA8427800F558CB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		04B5E6581EA8427800F558CB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		04B5E65B1EA8427800F558CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04B5E65D1EA8427800F558CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04B5E6601EA8427800F558CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04B5E6621EA8427800F558CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B5E6691EA8439C00F558CB /* KXPhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXPhotoPickerViewController.h; sourceTree = "<group>"; };
+		04B5E66A1EA8439C00F558CB /* KXPhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXPhotoPickerViewController.m; sourceTree = "<group>"; };
+		04B5E66C1EA8440600F558CB /* KXAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXAlbumTableViewController.h; sourceTree = "<group>"; };
+		04B5E66D1EA8440600F558CB /* KXAlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXAlbumTableViewController.m; sourceTree = "<group>"; };
+		04B5E66F1EA8442200F558CB /* KXImageFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXImageFlowViewController.h; sourceTree = "<group>"; };
+		04B5E6701EA8442200F558CB /* KXImageFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXImageFlowViewController.m; sourceTree = "<group>"; };
+		04B5E6721EA84DE700F558CB /* ImageResource.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageResource.xcassets; sourceTree = "<group>"; };
+		04B5E6751EA8507000F558CB /* UIColor+My.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+My.h"; sourceTree = "<group>"; };
+		04B5E6761EA8507000F558CB /* UIColor+My.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+My.m"; sourceTree = "<group>"; };
+		04B5E6791EA8514800F558CB /* KXAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXAlbumCell.h; sourceTree = "<group>"; };
+		04B5E67A1EA8514800F558CB /* KXAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXAlbumCell.m; sourceTree = "<group>"; };
+		04B5E67D1EA8546B00F558CB /* KXAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXAlbumModel.h; sourceTree = "<group>"; };
+		04B5E67E1EA8546B00F558CB /* KXAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXAlbumModel.m; sourceTree = "<group>"; };
+		04B5E6801EA85B2100F558CB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		04B5E6811EA85B2100F558CB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		04B5E6821EA868AE00F558CB /* DNAssetsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAssetsViewCell.h; sourceTree = "<group>"; };
+		04B5E6831EA868AE00F558CB /* DNAssetsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAssetsViewCell.m; sourceTree = "<group>"; };
+		04B5E6861EA8866F00F558CB /* DNSendButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSendButton.h; sourceTree = "<group>"; };
+		04B5E6871EA8866F00F558CB /* DNSendButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSendButton.m; sourceTree = "<group>"; };
+		04B5E68C1EA8873B00F558CB /* UIView+KXImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KXImagePicker.h"; sourceTree = "<group>"; };
+		04B5E68D1EA8873B00F558CB /* UIView+KXImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KXImagePicker.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04B5E64B1EA8427800F558CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04B5E6451EA8427800F558CB = {
+			isa = PBXGroup;
+			children = (
+				04B5E6501EA8427800F558CB /* KXPhotoBrower */,
+				04B5E64F1EA8427800F558CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04B5E64F1EA8427800F558CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04B5E64E1EA8427800F558CB /* KXPhotoBrower.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04B5E6501EA8427800F558CB /* KXPhotoBrower */ = {
+			isa = PBXGroup;
+			children = (
+				04B5E6741EA8505200F558CB /* Categray */,
+				04B5E6681EA8435100F558CB /* KXPhotoPicker */,
+				04B5E6541EA8427800F558CB /* AppDelegate.h */,
+				04B5E6551EA8427800F558CB /* AppDelegate.m */,
+				04B5E6571EA8427800F558CB /* ViewController.h */,
+				04B5E6581EA8427800F558CB /* ViewController.m */,
+				04B5E65A1EA8427800F558CB /* Main.storyboard */,
+				04B5E65D1EA8427800F558CB /* Assets.xcassets */,
+				04B5E65F1EA8427800F558CB /* LaunchScreen.storyboard */,
+				04B5E6621EA8427800F558CB /* Info.plist */,
+				04B5E6511EA8427800F558CB /* Supporting Files */,
+			);
+			path = KXPhotoBrower;
+			sourceTree = "<group>";
+		};
+		04B5E6511EA8427800F558CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04B5E6521EA8427800F558CB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04B5E6681EA8435100F558CB /* KXPhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				04B5E6851EA8866F00F558CB /* Source */,
+				04B5E67C1EA8545F00F558CB /* Model */,
+				04B5E6781EA8513000F558CB /* Cell */,
+				04B5E6721EA84DE700F558CB /* ImageResource.xcassets */,
+				04B5E6691EA8439C00F558CB /* KXPhotoPickerViewController.h */,
+				04B5E66A1EA8439C00F558CB /* KXPhotoPickerViewController.m */,
+				04B5E66C1EA8440600F558CB /* KXAlbumTableViewController.h */,
+				04B5E66D1EA8440600F558CB /* KXAlbumTableViewController.m */,
+				04B5E66F1EA8442200F558CB /* KXImageFlowViewController.h */,
+				04B5E6701EA8442200F558CB /* KXImageFlowViewController.m */,
+			);
+			path = KXPhotoPicker;
+			sourceTree = "<group>";
+		};
+		04B5E6741EA8505200F558CB /* Categray */ = {
+			isa = PBXGroup;
+			children = (
+				04B5E6751EA8507000F558CB /* UIColor+My.h */,
+				04B5E6761EA8507000F558CB /* UIColor+My.m */,
+			);
+			path = Categray;
+			sourceTree = "<group>";
+		};
+		04B5E6781EA8513000F558CB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				04B5E6821EA868AE00F558CB /* DNAssetsViewCell.h */,
+				04B5E6831EA868AE00F558CB /* DNAssetsViewCell.m */,
+				04B5E6791EA8514800F558CB /* KXAlbumCell.h */,
+				04B5E67A1EA8514800F558CB /* KXAlbumCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		04B5E67C1EA8545F00F558CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04B5E67D1EA8546B00F558CB /* KXAlbumModel.h */,
+				04B5E67E1EA8546B00F558CB /* KXAlbumModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04B5E6851EA8866F00F558CB /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				04B5E6861EA8866F00F558CB /* DNSendButton.h */,
+				04B5E6871EA8866F00F558CB /* DNSendButton.m */,
+				04B5E68C1EA8873B00F558CB /* UIView+KXImagePicker.h */,
+				04B5E68D1EA8873B00F558CB /* UIView+KXImagePicker.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04B5E64D1EA8427800F558CB /* KXPhotoBrower */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04B5E6651EA8427800F558CB /* Build configuration list for PBXNativeTarget "KXPhotoBrower" */;
+			buildPhases = (
+				04B5E64A1EA8427800F558CB /* Sources */,
+				04B5E64B1EA8427800F558CB /* Frameworks */,
+				04B5E64C1EA8427800F558CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KXPhotoBrower;
+			productName = KXPhotoBrower;
+			productReference = 04B5E64E1EA8427800F558CB /* KXPhotoBrower.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04B5E6461EA8427800F558CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = kit;
+				TargetAttributes = {
+					04B5E64D1EA8427800F558CB = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = C74GJQS7VJ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 04B5E6491EA8427800F558CB /* Build configuration list for PBXProject "KXPhotoBrower" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+			);
+			mainGroup = 04B5E6451EA8427800F558CB;
+			productRefGroup = 04B5E64F1EA8427800F558CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04B5E64D1EA8427800F558CB /* KXPhotoBrower */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04B5E64C1EA8427800F558CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B5E6611EA8427800F558CB /* LaunchScreen.storyboard in Resources */,
+				04B5E6731EA84DE700F558CB /* ImageResource.xcassets in Resources */,
+				04B5E65E1EA8427800F558CB /* Assets.xcassets in Resources */,
+				04B5E65C1EA8427800F558CB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04B5E64A1EA8427800F558CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B5E68E1EA8873B00F558CB /* UIView+KXImagePicker.m in Sources */,
+				04B5E66E1EA8440600F558CB /* KXAlbumTableViewController.m in Sources */,
+				04B5E6591EA8427800F558CB /* ViewController.m in Sources */,
+				04B5E6561EA8427800F558CB /* AppDelegate.m in Sources */,
+				04B5E66B1EA8439C00F558CB /* KXPhotoPickerViewController.m in Sources */,
+				04B5E67F1EA8546B00F558CB /* KXAlbumModel.m in Sources */,
+				04B5E67B1EA8514800F558CB /* KXAlbumCell.m in Sources */,
+				04B5E6881EA8866F00F558CB /* DNSendButton.m in Sources */,
+				04B5E6531EA8427800F558CB /* main.m in Sources */,
+				04B5E6711EA8442200F558CB /* KXImageFlowViewController.m in Sources */,
+				04B5E6771EA8507000F558CB /* UIColor+My.m in Sources */,
+				04B5E6841EA868AE00F558CB /* DNAssetsViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		04B5E65A1EA8427800F558CB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04B5E65B1EA8427800F558CB /* Base */,
+				04B5E6801EA85B2100F558CB /* zh-Hans */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04B5E65F1EA8427800F558CB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04B5E6601EA8427800F558CB /* Base */,
+				04B5E6811EA85B2100F558CB /* zh-Hans */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04B5E6631EA8427800F558CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		04B5E6641EA8427800F558CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04B5E6661EA8427800F558CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C74GJQS7VJ;
+				INFOPLIST_FILE = KXPhotoBrower/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mac.KXPhotoBrower;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		04B5E6671EA8427800F558CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C74GJQS7VJ;
+				INFOPLIST_FILE = KXPhotoBrower/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mac.KXPhotoBrower;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04B5E6491EA8427800F558CB /* Build configuration list for PBXProject "KXPhotoBrower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04B5E6631EA8427800F558CB /* Debug */,
+				04B5E6641EA8427800F558CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04B5E6651EA8427800F558CB /* Build configuration list for PBXNativeTarget "KXPhotoBrower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04B5E6661EA8427800F558CB /* Debug */,
+				04B5E6671EA8427800F558CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04B5E6461EA8427800F558CB /* Project object */;
+}
