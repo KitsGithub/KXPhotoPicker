@@ -8,6 +8,7 @@
 #import <Photos/Photos.h>
 #import "KXImageFlowViewController.h"
 #import "KXPhotoPickerViewController.h"
+#import "KXPhotoBrowserController.h"
 #import "DNAssetsViewCell.h"
 
 #import "UIColor+My.h"
