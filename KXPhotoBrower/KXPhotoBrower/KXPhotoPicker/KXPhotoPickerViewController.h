@@ -2,29 +2,31 @@
 //  KXPhotoPickerViewController.h
 //  KXPhotoBrower
 //
-//  Created by mac on 17/4/20.
+//  Created by mac on 2017/7/31.
 //  Copyright © 2017年 kit. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <Photos/Photos.h>
+#import "KXPhotosHeader.h"
+
 
 @class KXPhotoPickerViewController;
 @protocol KXPhotoPickerViewController <NSObject>
 
-//图片选择代理方法
-- (void)KXPhotoPickerViewController:(KXPhotoPickerViewController *)pickerViewController didSelectedImage:(NSArray<PHAsset *> *)imageArray;
+@optional
 
-//取消代理方法
-- (void)KXPhotoPickerViewControllerDidCancel:(KXPhotoPickerViewController *)photoPickerViewController;
+- (void)KXPhotoPickerViewControllerDidCancel:(KXPhotoPickerViewController *)imagePicker;
+
 
 @end
 
 @interface KXPhotoPickerViewController : UINavigationController
 
-@property (nonatomic, weak) id <KXPhotoPickerViewController> photoDelegate;
+@property (nonatomic, assign) NSUInteger pickerCount;
 
-@property (nonatomic, assign) int kDNImageFlowMaxSeletedNumber;
+
+@property (nonatomic, assign) KXPickerFilterType filterType;
+
+@property (nonatomic, weak) id <KXPhotoPickerViewController> photosDelegate;
 
 @end

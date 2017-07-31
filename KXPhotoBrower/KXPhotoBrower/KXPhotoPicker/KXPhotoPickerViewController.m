@@ -2,30 +2,21 @@
 //  KXPhotoPickerViewController.m
 //  KXPhotoBrower
 //
-//  Created by mac on 17/4/20.
+//  Created by mac on 2017/7/31.
 //  Copyright © 2017年 kit. All rights reserved.
 //
 
 #import "KXPhotoPickerViewController.h"
+#import "KXAlbumViewController.h"
 
-#import "KXAlbumTableViewController.h" //相簿
-#import "UIColor+My.h"
-
-@interface KXPhotoPickerViewController ()
-
-<
-UIGestureRecognizerDelegate,
-UINavigationControllerDelegate
->
+@interface KXPhotoPickerViewController () <UIGestureRecognizerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, weak) id<UINavigationControllerDelegate> navDelegate;
 @property (nonatomic, assign) BOOL isDuringPushAnimation;
 
 @end
 
-@implementation KXPhotoPickerViewController {
-    UIView *_lineView;
-}
+@implementation KXPhotoPickerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,9 +28,15 @@ UINavigationControllerDelegate
     
     self.interactivePopGestureRecognizer.delegate = self;
     
-    [self findBottomLineView];
-    
     [self showAlbumList];
+    
+}
+
+#pragma mark - priviate methods
+- (void)showAlbumList {
+    KXAlbumViewController *albumTableViewController = [[KXAlbumViewController alloc] init];
+    albumTableViewController.filterType = self.filterType;
+    [self setViewControllers:@[albumTableViewController]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,45 +44,59 @@ UINavigationControllerDelegate
     // Dispose of any resources that can be recreated.
 }
 
-- (void)showAlbumList
-{
-    KXAlbumTableViewController *albumTableViewController = [[KXAlbumTableViewController alloc] init];
-    albumTableViewController.kDNImageFlowMaxSeletedNumber = self.kDNImageFlowMaxSeletedNumber;
-    [self setViewControllers:@[albumTableViewController]];
-}
-
-
-//设置导航栏底部的分割线
-- (void)findBottomLineView {
-    //设置导航栏底线
-    UIImageView *navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationBar];
-    navBarHairlineImageView.hidden = YES;
-    
-    UIView *lineView = [[UIView alloc] initWithFrame:navBarHairlineImageView.frame];
-    _lineView = lineView;
-    lineView.backgroundColor = [UIColor colorFormHexRGB:@"e6e7ea"];
-    [self.navigationBar addSubview:lineView];
-}
-
-
-- (UIImageView *)findHairlineImageViewUnder:(UIView *)view {
-    
-    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
-        return (UIImageView *)view;
-    }
-    
-    for (UIView *subview in view.subviews) {
-        
-        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
-        if (imageView) {
-            return imageView;
-        }
-    }
-    return nil;
-}
-
 
 #pragma mark - UINavigationController
+- (void)setDelegate:(id<UINavigationControllerDelegate>)delegate {
+    [super setDelegate:delegate ? self : nil];
+    self.navDelegate = delegate != self ? delegate : nil;
+}
 
+- (void)pushViewController:(UIViewController *)viewController
+                  animated:(BOOL)animated __attribute__((objc_requires_super)) {
+    self.isDuringPushAnimation = YES;
+    [super pushViewController:viewController animated:animated];
+}
+
+
+
+#pragma mark UINavigationControllerDelegate
+- (void)navigationController:(UINavigationController *)navigationController
+       didShowViewController:(UIViewController *)viewController
+                    animated:(BOOL)animated {
+    self.isDuringPushAnimation = NO;
+    if ([self.navDelegate respondsToSelector:_cmd]) {
+        [self.navDelegate navigationController:navigationController didShowViewController:viewController animated:animated];
+    }
+}
+
+#pragma mark - UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer == self.interactivePopGestureRecognizer) {
+        return [self.viewControllers count] > 1 && !self.isDuringPushAnimation;
+    } else {
+        return YES;
+    }
+}
+
+#pragma mark - Delegate Forwarder
+
+- (BOOL)respondsToSelector:(SEL)s
+{
+    return [super respondsToSelector:s] || [self.navDelegate respondsToSelector:s];
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)s
+{
+    return [super methodSignatureForSelector:s] ?: [(id)self.navDelegate methodSignatureForSelector:s];
+}
+
+- (void)forwardInvocation:(NSInvocation *)invocation
+{
+    id delegate = self.navDelegate;
+    if ([delegate respondsToSelector:invocation.selector]) {
+        [invocation invokeWithTarget:delegate];
+    }
+}
 
 @end

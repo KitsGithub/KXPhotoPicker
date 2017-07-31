@@ -7,28 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040B7A5B1F2ED40D007505F6 /* KXAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B7A5A1F2ED40D007505F6 /* KXAlbumViewController.m */; };
+		040B7A5F1F2ED463007505F6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B7A5E1F2ED463007505F6 /* BaseViewController.m */; };
+		040B7A631F2ED506007505F6 /* KXPhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B7A621F2ED506007505F6 /* KXPhotoPickerViewController.m */; };
+		040B7A661F2ED90E007505F6 /* KXPickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B7A651F2ED90E007505F6 /* KXPickerModel.m */; };
+		040B7A691F2EDC07007505F6 /* KXAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B7A681F2EDC07007505F6 /* KXAlbumCell.m */; };
+		040B7A6C1F2EDF9F007505F6 /* KXFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B7A6B1F2EDF9F007505F6 /* KXFlowViewController.m */; };
 		04B5E6531EA8427800F558CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6521EA8427800F558CB /* main.m */; };
 		04B5E6561EA8427800F558CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6551EA8427800F558CB /* AppDelegate.m */; };
 		04B5E6591EA8427800F558CB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6581EA8427800F558CB /* ViewController.m */; };
 		04B5E65C1EA8427800F558CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B5E65A1EA8427800F558CB /* Main.storyboard */; };
 		04B5E65E1EA8427800F558CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B5E65D1EA8427800F558CB /* Assets.xcassets */; };
 		04B5E6611EA8427800F558CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B5E65F1EA8427800F558CB /* LaunchScreen.storyboard */; };
-		04B5E66B1EA8439C00F558CB /* KXPhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E66A1EA8439C00F558CB /* KXPhotoPickerViewController.m */; };
-		04B5E66E1EA8440600F558CB /* KXAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E66D1EA8440600F558CB /* KXAlbumTableViewController.m */; };
-		04B5E6711EA8442200F558CB /* KXImageFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6701EA8442200F558CB /* KXImageFlowViewController.m */; };
-		04B5E6731EA84DE700F558CB /* ImageResource.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B5E6721EA84DE700F558CB /* ImageResource.xcassets */; };
 		04B5E6771EA8507000F558CB /* UIColor+My.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6761EA8507000F558CB /* UIColor+My.m */; };
-		04B5E67B1EA8514800F558CB /* KXAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E67A1EA8514800F558CB /* KXAlbumCell.m */; };
-		04B5E67F1EA8546B00F558CB /* KXAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E67E1EA8546B00F558CB /* KXAlbumModel.m */; };
-		04B5E6841EA868AE00F558CB /* DNAssetsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6831EA868AE00F558CB /* DNAssetsViewCell.m */; };
-		04B5E6881EA8866F00F558CB /* DNSendButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6871EA8866F00F558CB /* DNSendButton.m */; };
-		04B5E68E1EA8873B00F558CB /* UIView+KXImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E68D1EA8873B00F558CB /* UIView+KXImagePicker.m */; };
-		04B5E6911EA89EBB00F558CB /* KXPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6901EA89EBB00F558CB /* KXPhotoBrowserController.m */; };
-		04B5E6941EA8A6A700F558CB /* KXBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6931EA8A6A700F558CB /* KXBrowserCell.m */; };
-		04B5E6971EA8A8B900F558CB /* DNTapDetectingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6961EA8A8B900F558CB /* DNTapDetectingImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040B7A591F2ED40D007505F6 /* KXAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXAlbumViewController.h; sourceTree = "<group>"; };
+		040B7A5A1F2ED40D007505F6 /* KXAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXAlbumViewController.m; sourceTree = "<group>"; };
+		040B7A5D1F2ED463007505F6 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		040B7A5E1F2ED463007505F6 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		040B7A601F2ED48D007505F6 /* KXPhotosHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KXPhotosHeader.h; sourceTree = "<group>"; };
+		040B7A611F2ED506007505F6 /* KXPhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXPhotoPickerViewController.h; sourceTree = "<group>"; };
+		040B7A621F2ED506007505F6 /* KXPhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXPhotoPickerViewController.m; sourceTree = "<group>"; };
+		040B7A641F2ED90E007505F6 /* KXPickerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXPickerModel.h; sourceTree = "<group>"; };
+		040B7A651F2ED90E007505F6 /* KXPickerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXPickerModel.m; sourceTree = "<group>"; };
+		040B7A671F2EDC07007505F6 /* KXAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXAlbumCell.h; sourceTree = "<group>"; };
+		040B7A681F2EDC07007505F6 /* KXAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXAlbumCell.m; sourceTree = "<group>"; };
+		040B7A6A1F2EDF9F007505F6 /* KXFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXFlowViewController.h; sourceTree = "<group>"; };
+		040B7A6B1F2EDF9F007505F6 /* KXFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXFlowViewController.m; sourceTree = "<group>"; };
 		04B5E64E1EA8427800F558CB /* KXPhotoBrower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KXPhotoBrower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B5E6521EA8427800F558CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04B5E6541EA8427800F558CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,33 +46,10 @@
 		04B5E65D1EA8427800F558CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B5E6601EA8427800F558CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04B5E6621EA8427800F558CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04B5E6691EA8439C00F558CB /* KXPhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXPhotoPickerViewController.h; sourceTree = "<group>"; };
-		04B5E66A1EA8439C00F558CB /* KXPhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXPhotoPickerViewController.m; sourceTree = "<group>"; };
-		04B5E66C1EA8440600F558CB /* KXAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXAlbumTableViewController.h; sourceTree = "<group>"; };
-		04B5E66D1EA8440600F558CB /* KXAlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXAlbumTableViewController.m; sourceTree = "<group>"; };
-		04B5E66F1EA8442200F558CB /* KXImageFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXImageFlowViewController.h; sourceTree = "<group>"; };
-		04B5E6701EA8442200F558CB /* KXImageFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXImageFlowViewController.m; sourceTree = "<group>"; };
-		04B5E6721EA84DE700F558CB /* ImageResource.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageResource.xcassets; sourceTree = "<group>"; };
 		04B5E6751EA8507000F558CB /* UIColor+My.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+My.h"; sourceTree = "<group>"; };
 		04B5E6761EA8507000F558CB /* UIColor+My.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+My.m"; sourceTree = "<group>"; };
-		04B5E6791EA8514800F558CB /* KXAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXAlbumCell.h; sourceTree = "<group>"; };
-		04B5E67A1EA8514800F558CB /* KXAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXAlbumCell.m; sourceTree = "<group>"; };
-		04B5E67D1EA8546B00F558CB /* KXAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXAlbumModel.h; sourceTree = "<group>"; };
-		04B5E67E1EA8546B00F558CB /* KXAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXAlbumModel.m; sourceTree = "<group>"; };
 		04B5E6801EA85B2100F558CB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		04B5E6811EA85B2100F558CB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		04B5E6821EA868AE00F558CB /* DNAssetsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAssetsViewCell.h; sourceTree = "<group>"; };
-		04B5E6831EA868AE00F558CB /* DNAssetsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAssetsViewCell.m; sourceTree = "<group>"; };
-		04B5E6861EA8866F00F558CB /* DNSendButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSendButton.h; sourceTree = "<group>"; };
-		04B5E6871EA8866F00F558CB /* DNSendButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSendButton.m; sourceTree = "<group>"; };
-		04B5E68C1EA8873B00F558CB /* UIView+KXImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KXImagePicker.h"; sourceTree = "<group>"; };
-		04B5E68D1EA8873B00F558CB /* UIView+KXImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KXImagePicker.m"; sourceTree = "<group>"; };
-		04B5E68F1EA89EBB00F558CB /* KXPhotoBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXPhotoBrowserController.h; sourceTree = "<group>"; };
-		04B5E6901EA89EBB00F558CB /* KXPhotoBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXPhotoBrowserController.m; sourceTree = "<group>"; };
-		04B5E6921EA8A6A700F558CB /* KXBrowserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXBrowserCell.h; sourceTree = "<group>"; };
-		04B5E6931EA8A6A700F558CB /* KXBrowserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXBrowserCell.m; sourceTree = "<group>"; };
-		04B5E6951EA8A8B900F558CB /* DNTapDetectingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNTapDetectingImageView.h; sourceTree = "<group>"; };
-		04B5E6961EA8A8B900F558CB /* DNTapDetectingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNTapDetectingImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +63,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040B7A4E1F2ED362007505F6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				040B7A671F2EDC07007505F6 /* KXAlbumCell.h */,
+				040B7A681F2EDC07007505F6 /* KXAlbumCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		040B7A4F1F2ED362007505F6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040B7A591F2ED40D007505F6 /* KXAlbumViewController.h */,
+				040B7A5A1F2ED40D007505F6 /* KXAlbumViewController.m */,
+				040B7A6A1F2EDF9F007505F6 /* KXFlowViewController.h */,
+				040B7A6B1F2EDF9F007505F6 /* KXFlowViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040B7A501F2ED362007505F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				040B7A641F2ED90E007505F6 /* KXPickerModel.h */,
+				040B7A651F2ED90E007505F6 /* KXPickerModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		040B7A5C1F2ED463007505F6 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				040B7A5D1F2ED463007505F6 /* BaseViewController.h */,
+				040B7A5E1F2ED463007505F6 /* BaseViewController.m */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
 		04B5E6451EA8427800F558CB = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +120,7 @@
 		04B5E6501EA8427800F558CB /* KXPhotoBrower */ = {
 			isa = PBXGroup;
 			children = (
+				040B7A5C1F2ED463007505F6 /* BaseView */,
 				04B5E6741EA8505200F558CB /* Categray */,
 				04B5E6681EA8435100F558CB /* KXPhotoPicker */,
 				04B5E6541EA8427800F558CB /* AppDelegate.h */,
@@ -124,18 +147,12 @@
 		04B5E6681EA8435100F558CB /* KXPhotoPicker */ = {
 			isa = PBXGroup;
 			children = (
-				04B5E6851EA8866F00F558CB /* Source */,
-				04B5E67C1EA8545F00F558CB /* Model */,
-				04B5E6781EA8513000F558CB /* Cell */,
-				04B5E6721EA84DE700F558CB /* ImageResource.xcassets */,
-				04B5E6691EA8439C00F558CB /* KXPhotoPickerViewController.h */,
-				04B5E66A1EA8439C00F558CB /* KXPhotoPickerViewController.m */,
-				04B5E66C1EA8440600F558CB /* KXAlbumTableViewController.h */,
-				04B5E66D1EA8440600F558CB /* KXAlbumTableViewController.m */,
-				04B5E66F1EA8442200F558CB /* KXImageFlowViewController.h */,
-				04B5E6701EA8442200F558CB /* KXImageFlowViewController.m */,
-				04B5E68F1EA89EBB00F558CB /* KXPhotoBrowserController.h */,
-				04B5E6901EA89EBB00F558CB /* KXPhotoBrowserController.m */,
+				040B7A601F2ED48D007505F6 /* KXPhotosHeader.h */,
+				040B7A611F2ED506007505F6 /* KXPhotoPickerViewController.h */,
+				040B7A621F2ED506007505F6 /* KXPhotoPickerViewController.m */,
+				040B7A4F1F2ED362007505F6 /* Controller */,
+				040B7A4E1F2ED362007505F6 /* Cell */,
+				040B7A501F2ED362007505F6 /* Model */,
 			);
 			path = KXPhotoPicker;
 			sourceTree = "<group>";
@@ -147,41 +164,6 @@
 				04B5E6761EA8507000F558CB /* UIColor+My.m */,
 			);
 			path = Categray;
-			sourceTree = "<group>";
-		};
-		04B5E6781EA8513000F558CB /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				04B5E6821EA868AE00F558CB /* DNAssetsViewCell.h */,
-				04B5E6831EA868AE00F558CB /* DNAssetsViewCell.m */,
-				04B5E6791EA8514800F558CB /* KXAlbumCell.h */,
-				04B5E67A1EA8514800F558CB /* KXAlbumCell.m */,
-				04B5E6921EA8A6A700F558CB /* KXBrowserCell.h */,
-				04B5E6931EA8A6A700F558CB /* KXBrowserCell.m */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		04B5E67C1EA8545F00F558CB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				04B5E67D1EA8546B00F558CB /* KXAlbumModel.h */,
-				04B5E67E1EA8546B00F558CB /* KXAlbumModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		04B5E6851EA8866F00F558CB /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				04B5E6951EA8A8B900F558CB /* DNTapDetectingImageView.h */,
-				04B5E6961EA8A8B900F558CB /* DNTapDetectingImageView.m */,
-				04B5E6861EA8866F00F558CB /* DNSendButton.h */,
-				04B5E6871EA8866F00F558CB /* DNSendButton.m */,
-				04B5E68C1EA8873B00F558CB /* UIView+KXImagePicker.h */,
-				04B5E68D1EA8873B00F558CB /* UIView+KXImagePicker.m */,
-			);
-			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +225,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B5E6611EA8427800F558CB /* LaunchScreen.storyboard in Resources */,
-				04B5E6731EA84DE700F558CB /* ImageResource.xcassets in Resources */,
 				04B5E65E1EA8427800F558CB /* Assets.xcassets in Resources */,
 				04B5E65C1EA8427800F558CB /* Main.storyboard in Resources */,
 			);
@@ -256,21 +237,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B5E68E1EA8873B00F558CB /* UIView+KXImagePicker.m in Sources */,
-				04B5E66E1EA8440600F558CB /* KXAlbumTableViewController.m in Sources */,
+				040B7A631F2ED506007505F6 /* KXPhotoPickerViewController.m in Sources */,
 				04B5E6591EA8427800F558CB /* ViewController.m in Sources */,
+				040B7A691F2EDC07007505F6 /* KXAlbumCell.m in Sources */,
 				04B5E6561EA8427800F558CB /* AppDelegate.m in Sources */,
-				04B5E66B1EA8439C00F558CB /* KXPhotoPickerViewController.m in Sources */,
-				04B5E6971EA8A8B900F558CB /* DNTapDetectingImageView.m in Sources */,
-				04B5E67F1EA8546B00F558CB /* KXAlbumModel.m in Sources */,
-				04B5E67B1EA8514800F558CB /* KXAlbumCell.m in Sources */,
-				04B5E6881EA8866F00F558CB /* DNSendButton.m in Sources */,
 				04B5E6531EA8427800F558CB /* main.m in Sources */,
-				04B5E6941EA8A6A700F558CB /* KXBrowserCell.m in Sources */,
-				04B5E6711EA8442200F558CB /* KXImageFlowViewController.m in Sources */,
+				040B7A6C1F2EDF9F007505F6 /* KXFlowViewController.m in Sources */,
+				040B7A661F2ED90E007505F6 /* KXPickerModel.m in Sources */,
+				040B7A5B1F2ED40D007505F6 /* KXAlbumViewController.m in Sources */,
 				04B5E6771EA8507000F558CB /* UIColor+My.m in Sources */,
-				04B5E6911EA89EBB00F558CB /* KXPhotoBrowserController.m in Sources */,
-				04B5E6841EA868AE00F558CB /* DNAssetsViewCell.m in Sources */,
+				040B7A5F1F2ED463007505F6 /* BaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,19 +2,18 @@
 //  KXAlbumCell.m
 //  KXPhotoBrower
 //
-//  Created by mac on 17/4/20.
+//  Created by mac on 2017/7/31.
 //  Copyright © 2017年 kit. All rights reserved.
 //
-#import <Foundation/Foundation.h>
-#import <Photos/Photos.h>
+
 #import "KXAlbumCell.h"
 #import "UIColor+My.h"
 
-#define NameFont [UIFont systemFontOfSize:15]
+#import "KXPhotosHeader.h"
 
 @implementation KXAlbumCell {
     UIImageView *_albumImageView;
-    UILabel *_albumNameLabel;
+    UILabel *_titleLable;
     UIView *_lineView;
 }
 
@@ -36,60 +35,81 @@
     return self;
 }
 
-
 - (void)setupView {
-    _albumImageView = [[UIImageView alloc] init];
+    _albumImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Image_placeHolder"]];
+    _albumImageView.contentMode = UIViewContentModeScaleAspectFill;
+    _albumImageView.clipsToBounds = YES;
     [self addSubview:_albumImageView];
     
-    _albumNameLabel = [[UILabel alloc] init];
-    _albumNameLabel.font = NameFont;
-    _albumNameLabel.textColor = [UIColor colorFormHexRGB:@"bcbcbc"];
-    [self addSubview:_albumNameLabel];
+    _titleLable = [UILabel new];
+    [self addSubview:_titleLable];
     
     _lineView = [UIView new];
     _lineView.backgroundColor = [UIColor colorFormHexRGB:@"e5e5e5"];
     [self addSubview:_lineView];
+    
 }
 
-- (void)setModel:(KXAlbumModel *)model {
-    PHFetchResult *fetchResult = [PHAsset fetchAssetsInAssetCollection:model.albumCollection options:nil];
-    NSString *targetStr = [NSString stringWithFormat:@"%@（%zd）",model.albumName,fetchResult.count];
+
+- (void)setModel:(KXPickerModel *)model {
+    _model = model;
+    
+    PHFetchResult *fetchResult = [PHAsset fetchAssetsInAssetCollection:model.assetCollection options:nil];
+    
+    //防止在重用的时候，造成卡顿
+    if (model.selectedArray == nil || model.selectedArray.count == 0) {
+        NSMutableArray *countArray = [NSMutableArray array];
+        if (model.assetCollection.assetCollectionSubtype == PHAssetCollectionSubtypeSmartAlbumVideos) {
+            for (PHAsset *videoAsset in fetchResult) {
+                if (videoAsset.mediaType == PHAssetMediaTypeVideo && videoAsset.mediaSubtypes != PHAssetMediaSubtypeVideoHighFrameRate && videoAsset.duration <= VideoMaxTimeInterval) {
+                    [countArray addObject:videoAsset];
+                }
+            }
+        } else {
+            for (PHAsset *photoAsset in fetchResult) {
+                if (photoAsset.mediaType == PHAssetMediaTypeImage) {
+                    [countArray addObject:photoAsset];
+                }
+            }
+        }
+        
+        model.selectedArray = countArray;
+    }
+    
+    
+    NSString *targetStr = [NSString stringWithFormat:@"%@（%zd）",model.collectionName,model.selectedArray.count];
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:targetStr];
-    [str setAttributes:@{NSForegroundColorAttributeName : [UIColor colorFormHexRGB:@"333333"],NSFontAttributeName : NameFont} range:[targetStr rangeOfString:model.albumName]];
+    [str setAttributes:@{NSForegroundColorAttributeName : [UIColor colorFormHexRGB:@"333333"],NSFontAttributeName : [UIFont systemFontOfSize:15]} range:[targetStr rangeOfString:model.collectionName]];
     
-    _albumNameLabel.attributedText = str;
+    _titleLable.attributedText = str;
+
     
-    //从相册中取出第一张图片
-    PHAsset *asset = fetchResult.firstObject;
+    //从筛选后的数组中取出 最新图片
+    PHAsset *asset = model.selectedArray.lastObject;
     
     PHImageRequestOptions *option = [[PHImageRequestOptions alloc]init];
     option.resizeMode = PHImageRequestOptionsResizeModeFast;
-    option.deliveryMode = PHImageRequestOptionsDeliveryModeFastFormat;
+    option.deliveryMode = PHImageRequestOptionsDeliveryModeOpportunistic;
     option.synchronous = YES;
     
+    //使用带缓存功能的manager
     [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:CGSizeMake(60, 60) contentMode:PHImageContentModeAspectFit options:option resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-        if (result) {   //成功获取图片，添加到数组里
+        if (result) {   //成功获取图片
             _albumImageView.image = result;
-        } else {        //若失败，则加载一张站位图
-            _albumImageView.image = [UIImage imageNamed:@"KXAlbum_PlaceHolder"];
         }
     }];
     
-    [self setNeedsLayout];
 }
-
 
 
 - (void)layoutSubviews {
-    CGFloat padding = 5;
-    CGFloat albumWH = CGRectGetHeight(self.frame) - 2;
-    _albumImageView.frame = CGRectMake(12, 1, albumWH, albumWH);
+    CGFloat imageWH = CGRectGetHeight(self.frame) - 2;
+    _albumImageView.frame = CGRectMake(12, (CGRectGetHeight(self.frame) - imageWH) * 0.5, imageWH, imageWH);
     
-    CGFloat albumNameX = CGRectGetMaxX(_albumImageView.frame) + padding * 2;
-    _albumNameLabel.frame = CGRectMake(albumNameX, 0, CGRectGetWidth(self.frame) - albumNameX, CGRectGetHeight(self.frame));
+    CGFloat titleX = CGRectGetMaxX(_albumImageView.frame) + 12;
+    _titleLable.frame = CGRectMake(titleX, 0, CGRectGetWidth(self.frame) - titleX , imageWH);
     
-    _lineView.frame = CGRectMake(albumNameX, CGRectGetHeight(self.frame) - 0.5, CGRectGetWidth(self.frame) - albumNameX, 0.5);
+    _lineView.frame = CGRectMake(12, CGRectGetHeight(self.frame) - 0.5, CGRectGetWidth(self.frame) - 12, 0.5);
 }
-
 
 @end
