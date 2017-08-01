@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger, KXPickerFilterType) {
     KXPickerFilterTypeAudio
 };
 
-#define VideoMaxTimeInterval 180        //允许视频最大秒数
+#define VideoMaxTimeInterval MAXFLOAT        //允许视频最大秒数
 
 
 #endif /* KXPhotosHeader_h */

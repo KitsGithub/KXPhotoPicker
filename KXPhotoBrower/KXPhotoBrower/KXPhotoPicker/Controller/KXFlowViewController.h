@@ -7,12 +7,13 @@
 //
 
 #import "BaseViewController.h"
+#import <Photos/Photos.h>
 #import "KXPhotosHeader.h"
 
 @interface KXFlowViewController : BaseViewController
 
 @property (nonatomic, assign) KXPickerFilterType filterType;
 
-@property (nonatomic, weak) PHCollection *albumCollection;
+@property (nonatomic, weak) PHAssetCollection *albumCollection;
 @property (nonatomic, copy) NSString *albumName;
 @end

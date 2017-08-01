@@ -98,10 +98,12 @@ static NSString *AlbumCellReusedID = @"AlbumCellReusedID";
 #pragma mark - 跳转到相册详情
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    KXPickerModel *model = self.dataArray[indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    KXPickerModel *model = self.dataArray[indexPath.row];
     KXFlowViewController *picker = [[KXFlowViewController alloc] init];
     picker.albumCollection = model.assetCollection;
+    picker.filterType = self.filterType;
     picker.albumName = model.collectionName;
     [self.navigationController pushViewController:picker animated:YES];
 }

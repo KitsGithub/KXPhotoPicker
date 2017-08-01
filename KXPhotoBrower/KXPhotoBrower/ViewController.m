@@ -26,11 +26,28 @@
     sender.backgroundColor = [UIColor yellowColor];
     [sender addTarget:self action:@selector(openKXPhotoPicker) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:sender];
+    
+    
+    UIButton *sender2 = [[UIButton alloc] initWithFrame:CGRectMake(30, 180, [UIScreen mainScreen].bounds.size.width - 60, 50)];
+    [sender2 setTitle:@"打开视频" forState:UIControlStateNormal];
+    [sender2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    sender2.backgroundColor = [UIColor yellowColor];
+    [sender2 addTarget:self action:@selector(openVideo) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:sender2];
 }
 
 
 - (void)openKXPhotoPicker {
     KXPhotoPickerViewController *photoPicker = [[KXPhotoPickerViewController alloc] init];
+    photoPicker.filterType = KXPickerFilterTypePhotos;
+    photoPicker.photosDelegate = self;
+    [self presentViewController:photoPicker animated:YES completion:nil];
+}
+
+
+- (void)openVideo {
+    KXPhotoPickerViewController *photoPicker = [[KXPhotoPickerViewController alloc] init];
+    photoPicker.filterType = KXPickerFilterTypeVideos;
     photoPicker.photosDelegate = self;
     [self presentViewController:photoPicker animated:YES completion:nil];
 }
@@ -59,11 +76,7 @@
 - (void)KXPhotoPickerViewControllerDidCancel:(KXPhotoPickerViewController *)photoPickerViewController {
     [photoPickerViewController dismissViewControllerAnimated:YES completion:nil];
 }
-//
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//    // Dispose of any resources that can be recreated.
-//}
+
 
 
 @end
