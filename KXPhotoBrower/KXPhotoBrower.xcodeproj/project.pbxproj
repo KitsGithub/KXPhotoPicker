@@ -14,6 +14,7 @@
 		040B7A691F2EDC07007505F6 /* KXAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B7A681F2EDC07007505F6 /* KXAlbumCell.m */; };
 		040B7A6C1F2EDF9F007505F6 /* KXFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B7A6B1F2EDF9F007505F6 /* KXFlowViewController.m */; };
 		040B7A6F1F2F134F007505F6 /* FlowViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B7A6E1F2F134F007505F6 /* FlowViewCell.m */; };
+		0463013F1F316CE000D3B811 /* KXPhotoBrowerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0463013E1F316CE000D3B811 /* KXPhotoBrowerController.m */; };
 		04B3E9771F3057AF00990573 /* KXAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B3E9761F3057AF00990573 /* KXAlbumModel.m */; };
 		04B5E6531EA8427800F558CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6521EA8427800F558CB /* main.m */; };
 		04B5E6561EA8427800F558CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6551EA8427800F558CB /* AppDelegate.m */; };
@@ -40,6 +41,8 @@
 		040B7A6B1F2EDF9F007505F6 /* KXFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXFlowViewController.m; sourceTree = "<group>"; };
 		040B7A6D1F2F134F007505F6 /* FlowViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowViewCell.h; sourceTree = "<group>"; };
 		040B7A6E1F2F134F007505F6 /* FlowViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowViewCell.m; sourceTree = "<group>"; };
+		0463013D1F316CE000D3B811 /* KXPhotoBrowerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXPhotoBrowerController.h; sourceTree = "<group>"; };
+		0463013E1F316CE000D3B811 /* KXPhotoBrowerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXPhotoBrowerController.m; sourceTree = "<group>"; };
 		04B3E9751F3057AF00990573 /* KXAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXAlbumModel.h; sourceTree = "<group>"; };
 		04B3E9761F3057AF00990573 /* KXAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXAlbumModel.m; sourceTree = "<group>"; };
 		04B5E64E1EA8427800F558CB /* KXPhotoBrower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KXPhotoBrower.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +90,8 @@
 				040B7A5A1F2ED40D007505F6 /* KXAlbumViewController.m */,
 				040B7A6A1F2EDF9F007505F6 /* KXFlowViewController.h */,
 				040B7A6B1F2EDF9F007505F6 /* KXFlowViewController.m */,
+				0463013D1F316CE000D3B811 /* KXPhotoBrowerController.h */,
+				0463013E1F316CE000D3B811 /* KXPhotoBrowerController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				040B7A691F2EDC07007505F6 /* KXAlbumCell.m in Sources */,
 				04B5E6561EA8427800F558CB /* AppDelegate.m in Sources */,
 				040B7A6F1F2F134F007505F6 /* FlowViewCell.m in Sources */,
+				0463013F1F316CE000D3B811 /* KXPhotoBrowerController.m in Sources */,
 				04B5E6531EA8427800F558CB /* main.m in Sources */,
 				040B7A6C1F2EDF9F007505F6 /* KXFlowViewController.m in Sources */,
 				040B7A661F2ED90E007505F6 /* KXPickerModel.m in Sources */,

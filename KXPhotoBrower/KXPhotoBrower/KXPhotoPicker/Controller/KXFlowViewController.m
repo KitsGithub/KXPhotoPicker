@@ -7,6 +7,7 @@
 //
 
 #import "KXFlowViewController.h"
+#import "KXPhotoBrowerController.h"
 #import "FlowViewCell.h"
 
 
@@ -154,6 +155,13 @@ static NSString *FlowViewCellReusedId = @"FlowViewCellReusedId";
     FlowViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:FlowViewCellReusedId forIndexPath:indexPath];
     cell.model = self.dataArray[indexPath.row];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    KXPhotoBrowerController *photoBrower = [[KXPhotoBrowerController alloc] init];
+    photoBrower.dataArray = self.dataArray;
+    photoBrower.currentIndex = indexPath.row;
+    [self.navigationController pushViewController:photoBrower animated:YES];
 }
 
 
