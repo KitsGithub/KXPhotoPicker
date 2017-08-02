@@ -7,6 +7,7 @@
 //
 
 #import "KXPhotoBrowerController.h"
+#import "KXPhotosHeader.h"
 #import "KXAlbumModel.h"
 
 static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
@@ -23,6 +24,7 @@ static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -33,6 +35,8 @@ static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)viewDidLoad {
@@ -50,7 +54,7 @@ static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
 }
 
 - (void)setupNav {
-    self.navigationController.navigationBar.barTintColor = [[UIColor clearColor] colorWithAlphaComponent:0];
+//    [self.navigationController setNavigationBarHidden:YES animated:YES];
     
 }
 
@@ -58,15 +62,17 @@ static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
     self.view.backgroundColor = [UIColor blackColor];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    layout.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height + 64);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
     
-    _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, -64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height + 64) collectionViewLayout:layout];
     [self.view addSubview:_collectionView];
     
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
+    _collectionView.pagingEnabled = YES;
+    _collectionView.showsHorizontalScrollIndicator = NO;
     
     [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:KXBrowerCellReusedID];
     
@@ -83,7 +89,24 @@ static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KXBrowerCellReusedID forIndexPath:indexPath];
+    cell.backgroundColor = RandomColor;
     return cell;
+}
+
+- (CGFloat) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.0f;
+}
+
+- (UIEdgeInsets) collectionView:(UICollectionView *)collectionView
+                         layout:(UICollectionViewLayout *)collectionViewLayout
+         insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(.0f, .0f, .0f, .0f);
+}
+
+#pragma mark - Nav Privated Method
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 
