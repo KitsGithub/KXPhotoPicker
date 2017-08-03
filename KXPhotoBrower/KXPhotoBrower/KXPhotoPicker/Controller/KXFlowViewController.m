@@ -8,6 +8,7 @@
 
 #import "KXFlowViewController.h"
 #import "KXPhotoBrowerController.h"
+#import "KXPhotoPickerViewController.h"
 #import "FlowViewCell.h"
 
 
@@ -90,6 +91,24 @@ static NSString *FlowViewCellReusedId = @"FlowViewCellReusedId";
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)cancellAction {
+    KXPhotoPickerViewController *navController = [self dnImagePickerController];
+    if (navController && [navController.photosDelegate respondsToSelector:@selector(KXPhotoPickerViewControllerDidCancel:)]) {
+        [navController.photosDelegate KXPhotoPickerViewControllerDidCancel:navController];
+    }
+}
+
+- (KXPhotoPickerViewController *)dnImagePickerController
+{
+    if (nil == self.navigationController ||
+        ![self.navigationController isKindOfClass:[KXPhotoPickerViewController class]])
+    {
+        NSAssert(false, @"check the navigation controller");
+    }
+    return (KXPhotoPickerViewController *)self.navigationController;
+}
+
+
 
 
 #pragma mark - 布局
@@ -113,6 +132,16 @@ static NSString *FlowViewCellReusedId = @"FlowViewCellReusedId";
     [backBtn addTarget:self action:@selector(backButtonAction) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
     self.navigationItem.leftBarButtonItem = backItem;
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, 49 - 26, 0, -19);
+    [button setTitleEdgeInsets:insets];
+    [button setFrame:CGRectMake(0, 0, 64, 30)];
+    [button addTarget:self action:@selector(cancellAction) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"取消" forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+    [button setTitleColor:[UIColor colorFormHexRGB:@"808080"] forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     
 }
 

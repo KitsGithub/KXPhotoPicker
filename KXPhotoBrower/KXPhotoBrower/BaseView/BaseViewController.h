@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KXPhotosHeader.h"
+//#import "UINavigationController+FDFullscreenPopGesture.h"
 
 typedef void(^NavSideslipBlock)();
 

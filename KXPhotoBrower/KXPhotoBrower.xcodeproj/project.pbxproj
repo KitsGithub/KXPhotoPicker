@@ -15,6 +15,9 @@
 		040B7A6C1F2EDF9F007505F6 /* KXFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B7A6B1F2EDF9F007505F6 /* KXFlowViewController.m */; };
 		040B7A6F1F2F134F007505F6 /* FlowViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B7A6E1F2F134F007505F6 /* FlowViewCell.m */; };
 		0463013F1F316CE000D3B811 /* KXPhotoBrowerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0463013E1F316CE000D3B811 /* KXPhotoBrowerController.m */; };
+		049F3CF31F32B9A100AF11B1 /* KXPhotoBrowerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F3CF21F32B9A100AF11B1 /* KXPhotoBrowerCell.m */; };
+		049F3CF71F32C74700AF11B1 /* KXBrowerToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F3CF61F32C74700AF11B1 /* KXBrowerToolView.m */; };
+		049F3CFA1F32FE7B00AF11B1 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F3CF91F32FE7B00AF11B1 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		04B3E9771F3057AF00990573 /* KXAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B3E9761F3057AF00990573 /* KXAlbumModel.m */; };
 		04B5E6531EA8427800F558CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6521EA8427800F558CB /* main.m */; };
 		04B5E6561EA8427800F558CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6551EA8427800F558CB /* AppDelegate.m */; };
@@ -43,6 +46,12 @@
 		040B7A6E1F2F134F007505F6 /* FlowViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowViewCell.m; sourceTree = "<group>"; };
 		0463013D1F316CE000D3B811 /* KXPhotoBrowerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXPhotoBrowerController.h; sourceTree = "<group>"; };
 		0463013E1F316CE000D3B811 /* KXPhotoBrowerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXPhotoBrowerController.m; sourceTree = "<group>"; };
+		049F3CF11F32B9A100AF11B1 /* KXPhotoBrowerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXPhotoBrowerCell.h; sourceTree = "<group>"; };
+		049F3CF21F32B9A100AF11B1 /* KXPhotoBrowerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXPhotoBrowerCell.m; sourceTree = "<group>"; };
+		049F3CF51F32C74700AF11B1 /* KXBrowerToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXBrowerToolView.h; sourceTree = "<group>"; };
+		049F3CF61F32C74700AF11B1 /* KXBrowerToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXBrowerToolView.m; sourceTree = "<group>"; };
+		049F3CF81F32FE7B00AF11B1 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		049F3CF91F32FE7B00AF11B1 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		04B3E9751F3057AF00990573 /* KXAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXAlbumModel.h; sourceTree = "<group>"; };
 		04B3E9761F3057AF00990573 /* KXAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXAlbumModel.m; sourceTree = "<group>"; };
 		04B5E64E1EA8427800F558CB /* KXPhotoBrower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KXPhotoBrower.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +88,8 @@
 				040B7A681F2EDC07007505F6 /* KXAlbumCell.m */,
 				040B7A6D1F2F134F007505F6 /* FlowViewCell.h */,
 				040B7A6E1F2F134F007505F6 /* FlowViewCell.m */,
+				049F3CF11F32B9A100AF11B1 /* KXPhotoBrowerCell.h */,
+				049F3CF21F32B9A100AF11B1 /* KXPhotoBrowerCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -110,10 +121,21 @@
 		040B7A5C1F2ED463007505F6 /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
+				049F3CF81F32FE7B00AF11B1 /* UINavigationController+FDFullscreenPopGesture.h */,
+				049F3CF91F32FE7B00AF11B1 /* UINavigationController+FDFullscreenPopGesture.m */,
 				040B7A5D1F2ED463007505F6 /* BaseViewController.h */,
 				040B7A5E1F2ED463007505F6 /* BaseViewController.m */,
 			);
 			path = BaseView;
+			sourceTree = "<group>";
+		};
+		049F3CF41F32C73300AF11B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049F3CF51F32C74700AF11B1 /* KXBrowerToolView.h */,
+				049F3CF61F32C74700AF11B1 /* KXBrowerToolView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		04B5E6451EA8427800F558CB = {
@@ -168,6 +190,7 @@
 				040B7A4F1F2ED362007505F6 /* Controller */,
 				040B7A4E1F2ED362007505F6 /* Cell */,
 				040B7A501F2ED362007505F6 /* Model */,
+				049F3CF41F32C73300AF11B1 /* View */,
 			);
 			path = KXPhotoPicker;
 			sourceTree = "<group>";
@@ -254,8 +277,10 @@
 			files = (
 				040B7A631F2ED506007505F6 /* KXPhotoPickerViewController.m in Sources */,
 				04B5E6591EA8427800F558CB /* ViewController.m in Sources */,
+				049F3CFA1F32FE7B00AF11B1 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				040B7A691F2EDC07007505F6 /* KXAlbumCell.m in Sources */,
 				04B5E6561EA8427800F558CB /* AppDelegate.m in Sources */,
+				049F3CF31F32B9A100AF11B1 /* KXPhotoBrowerCell.m in Sources */,
 				040B7A6F1F2F134F007505F6 /* FlowViewCell.m in Sources */,
 				0463013F1F316CE000D3B811 /* KXPhotoBrowerController.m in Sources */,
 				04B5E6531EA8427800F558CB /* main.m in Sources */,
@@ -264,6 +289,7 @@
 				040B7A5B1F2ED40D007505F6 /* KXAlbumViewController.m in Sources */,
 				04B5E6771EA8507000F558CB /* UIColor+My.m in Sources */,
 				04B3E9771F3057AF00990573 /* KXAlbumModel.m in Sources */,
+				049F3CF71F32C74700AF11B1 /* KXBrowerToolView.m in Sources */,
 				040B7A5F1F2ED463007505F6 /* BaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

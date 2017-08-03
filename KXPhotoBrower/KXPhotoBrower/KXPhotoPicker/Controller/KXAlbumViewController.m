@@ -152,8 +152,7 @@ static NSString *AlbumCellReusedID = @"AlbumCellReusedID";
     [button setTitle:@"取消" forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
     [button setTitleColor:[UIColor colorFormHexRGB:@"808080"] forState:UIControlStateNormal];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     
     
 }

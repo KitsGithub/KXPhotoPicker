@@ -8,7 +8,6 @@
 
 #import "BaseViewController.h"
 #import <Photos/Photos.h>
-#import "KXPhotosHeader.h"
 
 @interface KXFlowViewController : BaseViewController
 
