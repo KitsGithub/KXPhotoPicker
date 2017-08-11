@@ -6,10 +6,15 @@
 //  Copyright © 2017年 kit. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import <UIKit/UIKit.h>
+
+typedef void(^ReturnBlock)();
+
 @class KXAlbumModel;
 
-@interface KXPhotoBrowerController : BaseViewController
+@interface KXPhotoBrowerController : UIViewController
+
+@property (nonatomic, copy) ReturnBlock returnBlock;
 
 @property (nonatomic, strong) NSMutableArray <KXAlbumModel *> *dataArray;
 @property (nonatomic, assign) NSUInteger currentIndex;

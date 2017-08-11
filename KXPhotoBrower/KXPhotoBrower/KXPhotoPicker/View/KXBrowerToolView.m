@@ -11,6 +11,7 @@
 @implementation KXBrowerToolView {
     UIView *_bgView;
     UILabel *_titleLabel;
+    UIView *_lineView;
     
     //左右按钮
     UIButton *_leftButton;
@@ -49,6 +50,10 @@
     [_rightButton setImage:[UIImage imageNamed:@"photo_check_default"] forState:UIControlStateNormal];
     [_rightButton setImage:[UIImage imageNamed:@"photo_check_selected"] forState:UIControlStateSelected];
     [self setControlWithStyle:self.style];
+    
+    _lineView = [[UIView alloc] initWithFrame:CGRectMake(0, KXBrowerToolHeight - 0.5, [UIScreen mainScreen].bounds.size.width, 0.5)];
+    _lineView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    [self addSubview:_lineView];
 }
 
 

@@ -190,6 +190,9 @@ static NSString *FlowViewCellReusedId = @"FlowViewCellReusedId";
     KXPhotoBrowerController *photoBrower = [[KXPhotoBrowerController alloc] init];
     photoBrower.dataArray = self.dataArray;
     photoBrower.currentIndex = indexPath.row;
+    photoBrower.returnBlock = ^{
+        [_imageFlowCollectionView reloadData];
+    };
     [self.navigationController pushViewController:photoBrower animated:YES];
 }
 

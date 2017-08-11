@@ -26,6 +26,9 @@
 		04B5E65E1EA8427800F558CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B5E65D1EA8427800F558CB /* Assets.xcassets */; };
 		04B5E6611EA8427800F558CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B5E65F1EA8427800F558CB /* LaunchScreen.storyboard */; };
 		04B5E6771EA8507000F558CB /* UIColor+My.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5E6761EA8507000F558CB /* UIColor+My.m */; };
+		04C638D21F3D87B6009E4C0F /* KXBottomToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C638D11F3D87B6009E4C0F /* KXBottomToolView.m */; };
+		04C638D51F3D8BE4009E4C0F /* DNSendButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C638D41F3D8BE4009E4C0F /* DNSendButton.m */; };
+		04C638D81F3D8CC3009E4C0F /* UIView+DNImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C638D71F3D8CC3009E4C0F /* UIView+DNImagePicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,12 @@
 		04B5E6761EA8507000F558CB /* UIColor+My.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+My.m"; sourceTree = "<group>"; };
 		04B5E6801EA85B2100F558CB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		04B5E6811EA85B2100F558CB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		04C638D01F3D87B6009E4C0F /* KXBottomToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXBottomToolView.h; sourceTree = "<group>"; };
+		04C638D11F3D87B6009E4C0F /* KXBottomToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXBottomToolView.m; sourceTree = "<group>"; };
+		04C638D31F3D8BE4009E4C0F /* DNSendButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSendButton.h; sourceTree = "<group>"; };
+		04C638D41F3D8BE4009E4C0F /* DNSendButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSendButton.m; sourceTree = "<group>"; };
+		04C638D61F3D8CC2009E4C0F /* UIView+DNImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DNImagePicker.h"; sourceTree = "<group>"; };
+		04C638D71F3D8CC3009E4C0F /* UIView+DNImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DNImagePicker.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +143,12 @@
 			children = (
 				049F3CF51F32C74700AF11B1 /* KXBrowerToolView.h */,
 				049F3CF61F32C74700AF11B1 /* KXBrowerToolView.m */,
+				04C638D01F3D87B6009E4C0F /* KXBottomToolView.h */,
+				04C638D11F3D87B6009E4C0F /* KXBottomToolView.m */,
+				04C638D61F3D8CC2009E4C0F /* UIView+DNImagePicker.h */,
+				04C638D71F3D8CC3009E4C0F /* UIView+DNImagePicker.m */,
+				04C638D31F3D8BE4009E4C0F /* DNSendButton.h */,
+				04C638D41F3D8BE4009E4C0F /* DNSendButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,12 +296,15 @@
 				040B7A691F2EDC07007505F6 /* KXAlbumCell.m in Sources */,
 				04B5E6561EA8427800F558CB /* AppDelegate.m in Sources */,
 				049F3CF31F32B9A100AF11B1 /* KXPhotoBrowerCell.m in Sources */,
+				04C638D21F3D87B6009E4C0F /* KXBottomToolView.m in Sources */,
 				040B7A6F1F2F134F007505F6 /* FlowViewCell.m in Sources */,
 				0463013F1F316CE000D3B811 /* KXPhotoBrowerController.m in Sources */,
 				04B5E6531EA8427800F558CB /* main.m in Sources */,
 				040B7A6C1F2EDF9F007505F6 /* KXFlowViewController.m in Sources */,
+				04C638D51F3D8BE4009E4C0F /* DNSendButton.m in Sources */,
 				040B7A661F2ED90E007505F6 /* KXPickerModel.m in Sources */,
 				040B7A5B1F2ED40D007505F6 /* KXAlbumViewController.m in Sources */,
+				04C638D81F3D8CC3009E4C0F /* UIView+DNImagePicker.m in Sources */,
 				04B5E6771EA8507000F558CB /* UIColor+My.m in Sources */,
 				04B3E9771F3057AF00990573 /* KXAlbumModel.m in Sources */,
 				049F3CF71F32C74700AF11B1 /* KXBrowerToolView.m in Sources */,
