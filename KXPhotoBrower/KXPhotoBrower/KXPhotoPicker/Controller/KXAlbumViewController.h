@@ -13,5 +13,4 @@
 
 @property (nonatomic, assign) KXPickerFilterType filterType;
 
-
 @end

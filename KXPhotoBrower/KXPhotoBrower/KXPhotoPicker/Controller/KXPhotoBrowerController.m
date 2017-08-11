@@ -22,7 +22,7 @@ static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
 
 @interface KXPhotoBrowerController () <UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property (nonatomic, strong) NSMutableArray<KXAlbumModel *> *selectedArray;
+
 @property (nonatomic, strong) NSMutableArray<UIImage *> *imageArray;
 @property (nonatomic, strong) NSOperationQueue *queue;
 
@@ -145,13 +145,27 @@ static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
+    
+    for (NSInteger index = 0; index < self.selectedArray.count; index++) {
+        KXAlbumModel *model = self.selectedArray[index];
+        NSLog(@"第%zd个 ---  %@",index,model.asset);
+    }
+    
+    
     //创建一个线程队列
     self.queue = [NSOperationQueue new];
     
+    NSInvocationOperation *lastOperation;
     for (NSInteger index = 0; index < self.selectedArray.count; index++) {
         KXAlbumModel *albumModel = self.selectedArray[index];
         //新建任务
         NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(requeImageWihtAsset:) object:albumModel.asset];
+        
+#warning todo - 看看有没有其他好的办法实现顺序
+        if (lastOperation) {
+            [operation addDependency:lastOperation];
+        }
+        lastOperation = operation;
         [self.queue addOperation:operation];
     }
     
@@ -176,9 +190,9 @@ static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
                                                          options:opt
                                                    resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
                                                        if (result) {
-                                                           
-                                                           NSLog(@"%@ -- 完成了",asset);
                                                            [self.imageArray addObject:result];
+                                                           
+                                                           NSLog(@" ---  %@",asset);
                                                            
                                                            if (self.imageArray.count == self.selectedArray.count) {
                                                                dispatch_async(dispatch_get_main_queue(), ^{
@@ -188,10 +202,6 @@ static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
                                                            
                                                        }
                                                    }];
-
-    
-    
-
 }
 
 

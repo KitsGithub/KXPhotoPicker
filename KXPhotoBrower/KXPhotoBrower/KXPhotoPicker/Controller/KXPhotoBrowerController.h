@@ -14,9 +14,16 @@ typedef void(^ReturnBlock)();
 
 @interface KXPhotoBrowerController : UIViewController
 
+/**
+ 返回block
+ */
 @property (nonatomic, copy) ReturnBlock returnBlock;
 
+//数据源
 @property (nonatomic, strong) NSMutableArray <KXAlbumModel *> *dataArray;
+//选中的图片
+@property (nonatomic, strong) NSMutableArray<KXAlbumModel *> *selectedArray;
+
 @property (nonatomic, assign) NSUInteger currentIndex;
 
 @end
