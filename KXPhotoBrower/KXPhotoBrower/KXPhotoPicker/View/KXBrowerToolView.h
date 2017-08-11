@@ -41,6 +41,11 @@ typedef enum : NSUInteger {
 - (void)setRightButtonWithTarget:(id)target action:(SEL)action;
 
 /**
+ 设置右按钮的选中事件
+ */
+- (void)setRightButtonSelected:(BOOL)selected;
+
+/**
  展示类型
  */
 @property (nonatomic, assign) KXBrowerToolViewStyle style;

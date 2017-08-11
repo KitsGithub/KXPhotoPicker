@@ -122,5 +122,11 @@
     [_rightButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
 }
 
+/**
+ 设置右按钮的选中事件
+ */
+- (void)setRightButtonSelected:(BOOL)selected {
+    _rightButton.selected = selected;
+}
 
 @end

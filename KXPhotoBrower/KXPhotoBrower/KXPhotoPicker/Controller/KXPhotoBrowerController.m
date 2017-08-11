@@ -8,6 +8,7 @@
 
 
 #import "KXPhotoBrowerController.h"
+#import "KXPhotoPickerViewController.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
 #import "KXBrowerToolView.h"
@@ -15,11 +16,15 @@
 #import "KXPhotoBrowerCell.h"
 
 
+#import <MBProgressHUD.h>
+
 static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
 
 @interface KXPhotoBrowerController () <UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property (nonatomic, strong) NSMutableArray *selectedArray;
+@property (nonatomic, strong) NSMutableArray<KXAlbumModel *> *selectedArray;
+@property (nonatomic, strong) NSMutableArray<UIImage *> *imageArray;
+@property (nonatomic, strong) NSOperationQueue *queue;
 
 @end
 
@@ -39,6 +44,10 @@ static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    KXAlbumModel *model = self.dataArray[self.currentIndex];
+    [_navView setRightButtonSelected:model.isSelected];
+    
     [_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
 }
 
@@ -80,6 +89,9 @@ static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
 }
 
 
+- (void)dealloc {
+}
+
 
 #pragma mark - UI Action
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -114,19 +126,108 @@ static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
     KXPhotoBrowerCell *currentCell = array[0];
     currentCell.model.selected = sender.selected;
     
-    [self.selectedArray addObject:currentCell.model];
+    if (sender.selected) {
+        [self.selectedArray addObject:currentCell.model];
+    } else {
+        [self.selectedArray removeObject:currentCell.model];
+    }
+    
     _bottomToolView.badgeValue = [NSString stringWithFormat:@"%zd",_selectedArray.count];
 }
 
 //发送按钮的点击
 - (void)sendButtonAction:(UIButton *)sender {
     NSLog(@"发送");
+    if (self.selectedArray.count == 0) {
+        [[[UIAlertView alloc] initWithTitle:@"" message:@"要选择一张图片哦~" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil] show];
+        return;
+    }
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    //创建一个线程队列
+    self.queue = [NSOperationQueue new];
+    
+    for (NSInteger index = 0; index < self.selectedArray.count; index++) {
+        KXAlbumModel *albumModel = self.selectedArray[index];
+        //新建任务
+        NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(requeImageWihtAsset:) object:albumModel.asset];
+        [self.queue addOperation:operation];
+    }
+    
+    
 }
+
+
+- (void)requeImageWihtAsset:(PHAsset *)asset {
+    //异步获取选择的元数据 （也可以把 opt.synchronous 设置为NO，改为同步获取 ,但是要特别注意性能问题）
+    PHImageRequestOptions *opt = [[PHImageRequestOptions alloc]init];
+    opt.resizeMode = PHImageRequestOptionsResizeModeNone;
+    opt.deliveryMode = PHImageRequestOptionsDeliveryModeOpportunistic;
+    opt.networkAccessAllowed = YES;
+    opt.progressHandler = ^(double progress, NSError * _Nullable error, BOOL * _Nonnull stop, NSDictionary * _Nullable info) {
+        
+    };
+    opt.synchronous = YES;
+    
+    [[PHCachingImageManager defaultManager] requestImageForAsset:asset
+                                                      targetSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)
+                                                     contentMode:PHImageContentModeAspectFill
+                                                         options:opt
+                                                   resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+                                                       if (result) {
+                                                           
+                                                           NSLog(@"%@ -- 完成了",asset);
+                                                           [self.imageArray addObject:result];
+                                                           
+                                                           if (self.imageArray.count == self.selectedArray.count) {
+                                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                                   [self sendImageWhenPHAssetDidFinished];
+                                                               });
+                                                           }
+                                                           
+                                                       }
+                                                   }];
+
+    
+    
+
+}
+
+
+- (void)sendImageWhenPHAssetDidFinished {
+    
+    NSLog(@"全部完成了");
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+//    调用代理
+    KXPhotoPickerViewController *navController = [self dnImagePickerController];
+    if (navController && [navController.photosDelegate respondsToSelector:@selector(KXPhotoPickerViewController:didSelectedImage:)]) {
+        [navController.photosDelegate KXPhotoPickerViewController:navController didSelectedImage:self.imageArray];
+    }
+
+}
+
+
+
 
 
 #pragma mark -
 - (void)setupNav {
     self.fd_prefersNavigationBarHidden = YES;
+    
+    //异步获取已选的图片
+    dispatch_async(dispatch_queue_create(0, 0), ^{
+        for (KXAlbumModel *albumModel in self.dataArray) {
+            if (albumModel.selected) {
+                [self.selectedArray addObject:albumModel];
+            }
+        }
+        //主线程更新UI
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _bottomToolView.badgeValue = [NSString stringWithFormat:@"%zd",self.selectedArray.count];
+        });
+    });
 }
 
 - (void)setupView {
@@ -187,9 +288,30 @@ static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
 
 - (UIEdgeInsets) collectionView:(UICollectionView *)collectionView
                          layout:(UICollectionViewLayout *)collectionViewLayout
-         insetForSectionAtIndex:(NSInteger)section
-{
+         insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(.0f, .0f, .0f, .0f);
+}
+
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSInteger count = scrollView.contentOffset.x / [UIScreen mainScreen].bounds.size.width;
+    _navView.titleStr = [NSString stringWithFormat:@"%zd/%zd",count,self.dataArray.count];
+    
+    KXAlbumModel *model = self.dataArray[count];
+    
+    [_navView setRightButtonSelected:model.isSelected];
+}
+
+
+- (KXPhotoPickerViewController *)dnImagePickerController
+{
+    if (nil == self.navigationController
+        ||
+        ![self.navigationController isKindOfClass:[KXPhotoPickerViewController class]])
+    {
+        NSAssert(false, @"check the navigation controller");
+    }
+    return (KXPhotoPickerViewController *)self.navigationController;
 }
 
 
@@ -209,5 +331,11 @@ static NSString *KXBrowerCellReusedID = @"KXBrowerCellReusedID";
     return _selectedArray;
 }
 
+- (NSMutableArray<UIImage *> *)imageArray {
+    if (!_imageArray) {
+        _imageArray = [NSMutableArray array];
+    }
+    return _imageArray;
+}
 
 @end

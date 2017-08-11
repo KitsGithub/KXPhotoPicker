@@ -52,25 +52,21 @@
     [self presentViewController:photoPicker animated:YES completion:nil];
 }
 
-//- (void)KXPhotoPickerViewController:(KXPhotoPickerViewController *)pickerViewController didSelectedImage:(NSArray *)imageArray {
-//    
-//    //异步获取选择的元数据 （也可以把 opt.synchronous 设置为NO，改为同步获取 ,但是要特别注意性能问题）
-//    PHImageRequestOptions *opt = [[PHImageRequestOptions alloc]init];
-//    opt.resizeMode = PHImageRequestOptionsResizeModeNone;
-//    opt.deliveryMode = PHImageRequestOptionsDeliveryModeOpportunistic;
-//    opt.synchronous = YES;
-//    
-//    for (NSInteger index = 0; index < imageArray.count; index++) {
-//        PHAsset *asset = imageArray[index];
-//        [[PHCachingImageManager defaultManager] requestImageForAsset:asset targetSize:CGSizeMake(100, 100) contentMode:PHImageContentModeAspectFill options:opt resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-//            if (result) {
-//                
-//                //todo..
-//                NSLog(@"%@",result);
-//            }
-//        }];
-//    }
-//}
+- (void)KXPhotoPickerViewController:(KXPhotoPickerViewController *)pickerViewController didSelectedImage:(NSArray<UIImage *> *)imageArray{
+
+    for (NSInteger index = 0; index < imageArray.count; index++) {
+        UIImage *image = imageArray[index];
+        CGFloat width = 100;
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(width * index, 250, width, width)];
+        imageView.image = image;
+        [self.view addSubview:imageView];
+    }
+        
+        
+        
+    [pickerViewController dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 //取消代理
 - (void)KXPhotoPickerViewControllerDidCancel:(KXPhotoPickerViewController *)photoPickerViewController {

@@ -17,6 +17,7 @@
 
 - (void)KXPhotoPickerViewControllerDidCancel:(KXPhotoPickerViewController *)imagePicker;
 
+- (void)KXPhotoPickerViewController:(KXPhotoPickerViewController *)pickerViewController didSelectedImage:(NSArray<UIImage *> *)imageArray;
 
 @end
 

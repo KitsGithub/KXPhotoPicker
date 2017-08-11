@@ -29,6 +29,7 @@
 		04C638D21F3D87B6009E4C0F /* KXBottomToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C638D11F3D87B6009E4C0F /* KXBottomToolView.m */; };
 		04C638D51F3D8BE4009E4C0F /* DNSendButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C638D41F3D8BE4009E4C0F /* DNSendButton.m */; };
 		04C638D81F3D8CC3009E4C0F /* UIView+DNImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C638D71F3D8CC3009E4C0F /* UIView+DNImagePicker.m */; };
+		DCDED6C18CA0D55808A3B298 /* libPods-KXPhotoBrower.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C005A2B794791D4F60BEE7 /* libPods-KXPhotoBrower.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,9 @@
 		04C638D41F3D8BE4009E4C0F /* DNSendButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSendButton.m; sourceTree = "<group>"; };
 		04C638D61F3D8CC2009E4C0F /* UIView+DNImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DNImagePicker.h"; sourceTree = "<group>"; };
 		04C638D71F3D8CC3009E4C0F /* UIView+DNImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DNImagePicker.m"; sourceTree = "<group>"; };
+		3C4EE1F2662D38BCF380D879 /* Pods-KXPhotoBrower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KXPhotoBrower.release.xcconfig"; path = "Pods/Target Support Files/Pods-KXPhotoBrower/Pods-KXPhotoBrower.release.xcconfig"; sourceTree = "<group>"; };
+		71C005A2B794791D4F60BEE7 /* libPods-KXPhotoBrower.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KXPhotoBrower.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1FBFB545ADAD53AD7574E7C /* Pods-KXPhotoBrower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KXPhotoBrower.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KXPhotoBrower/Pods-KXPhotoBrower.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCDED6C18CA0D55808A3B298 /* libPods-KXPhotoBrower.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +163,8 @@
 			children = (
 				04B5E6501EA8427800F558CB /* KXPhotoBrower */,
 				04B5E64F1EA8427800F558CB /* Products */,
+				6881D757681CB3529AE65771 /* Pods */,
+				80684F851B6CC460A16D3A47 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,6 +226,23 @@
 			path = Categray;
 			sourceTree = "<group>";
 		};
+		6881D757681CB3529AE65771 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1FBFB545ADAD53AD7574E7C /* Pods-KXPhotoBrower.debug.xcconfig */,
+				3C4EE1F2662D38BCF380D879 /* Pods-KXPhotoBrower.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		80684F851B6CC460A16D3A47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71C005A2B794791D4F60BEE7 /* libPods-KXPhotoBrower.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,9 +250,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04B5E6651EA8427800F558CB /* Build configuration list for PBXNativeTarget "KXPhotoBrower" */;
 			buildPhases = (
+				5177E0088813512E8CF74C00 /* [CP] Check Pods Manifest.lock */,
 				04B5E64A1EA8427800F558CB /* Sources */,
 				04B5E64B1EA8427800F558CB /* Frameworks */,
 				04B5E64C1EA8427800F558CB /* Resources */,
+				58A586E15BDADA452338581A /* [CP] Embed Pods Frameworks */,
+				631D3AAC00766B62755ECABC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -284,6 +311,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5177E0088813512E8CF74C00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		58A586E15BDADA452338581A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KXPhotoBrower/Pods-KXPhotoBrower-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		631D3AAC00766B62755ECABC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KXPhotoBrower/Pods-KXPhotoBrower-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04B5E64A1EA8427800F558CB /* Sources */ = {
@@ -428,6 +503,7 @@
 		};
 		04B5E6661EA8427800F558CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1FBFB545ADAD53AD7574E7C /* Pods-KXPhotoBrower.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C74GJQS7VJ;
@@ -441,6 +517,7 @@
 		};
 		04B5E6671EA8427800F558CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C4EE1F2662D38BCF380D879 /* Pods-KXPhotoBrower.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C74GJQS7VJ;

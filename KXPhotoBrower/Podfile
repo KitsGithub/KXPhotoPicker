@@ -1,0 +1,4 @@
+target 'KXPhotoBrower' do
+pod 'MBProgressHUD'
+
+end

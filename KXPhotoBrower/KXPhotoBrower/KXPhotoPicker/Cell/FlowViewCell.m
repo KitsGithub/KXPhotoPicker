@@ -7,6 +7,7 @@
 //
 
 #import "FlowViewCell.h"
+#import "KXPhotosHeader.h"
 
 @implementation FlowViewCell {
     UIImageView *_imageView;
@@ -132,7 +133,7 @@
     
     CGFloat buttonWidth = 23;
     _checkButton.frame = CGRectMake(CGRectGetWidth(self.frame) - buttonWidth - 5 , 5, buttonWidth, buttonWidth);
-    _checkImageView.frame = _checkButton.frame;
+    _checkImageView.frame = CGRectMake(CGRectGetWidth(self.frame) - buttonWidth - 5 , 5, buttonWidth, buttonWidth);
     
     CGSize durationSize = [_videoDurationLabel.text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:13]} context:nil].size;
     
